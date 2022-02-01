@@ -21,7 +21,7 @@
         }
 
         async function getFlag(chars) {
-            var found = false; var char; var limit = flag.length + 5;
+            var found = false; var char; var limit = flag.length + 2;
             for(var i=0; i < chars.length; i++) {
 
                 char = specials.includes(char) ? '\\' + chars[i]:chars[i];
